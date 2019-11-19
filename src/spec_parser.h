@@ -251,7 +251,7 @@ util::Status SentencePieceTrainer::SetProtoField(const std::string& name, const 
   }
 
   if (name == "user_defined_symbols") {
-    for (const auto &val : string_util::Split(value, " ")) {
+    for (const auto &val : string_util::Split(value, "|")) {
       message->add_user_defined_symbols(val);
     }
     return util::OkStatus();
